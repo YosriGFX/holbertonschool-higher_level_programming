@@ -1,9 +1,10 @@
 #include "lists.h"
+
 /**
  * insert_node - prints all elements of a listint_t list
- * @head: pointer
+ * @head: pointer to head of list
  * @number: number to add
- * Return: addresss
+ * Return: the address of the new node, or NULL if it failed
  */
 listint_t *insert_node(listint_t **head, int number)
 {
