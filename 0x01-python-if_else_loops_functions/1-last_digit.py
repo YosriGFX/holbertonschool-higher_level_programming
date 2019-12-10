@@ -15,5 +15,5 @@ if digt > 5:
 elif digt == 0:
     print("Last digit of {} is {} and is 0".format(number, digt))
 else:
-    print(end="\0""Last digit of {} is {} and is ".format(number, digt))
+    print(end="" "Last digit of {} is {} and is ".format(number, digt))
     print("less than 6 and not 0")
