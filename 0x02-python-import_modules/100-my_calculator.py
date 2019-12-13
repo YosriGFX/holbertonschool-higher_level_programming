@@ -7,7 +7,7 @@ if __name__ == '__main__':
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     else:
-        s = 0
+        s = "a"
         a = int(argv[1])
         b = argv[2]
         c = int(argv[3])
@@ -19,7 +19,7 @@ if __name__ == '__main__':
             s = mul(a, c)
         if b == "/":
             s = div(a, c)
-        if s == 0:
+        if s == "a":
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
         else:
