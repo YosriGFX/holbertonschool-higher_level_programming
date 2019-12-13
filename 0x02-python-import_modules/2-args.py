@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 if __name__ == '__main__':
-    num = len(sys.argv[1:])
-    print("{:d} arguments:".format(num))
-    for x in range(1, num + 1):
-        print(end="{}: {}\n".format(x, sys.argv[x]))
+    num = len(argv)
+    print("{:d} arguments:".format(num - 1))
+    for x in range(1, num):
+        print(end="{}: {}\n".format(x, argv[x]))
