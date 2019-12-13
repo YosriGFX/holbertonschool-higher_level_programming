@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-exit("#pythoniscool")
+if __name__ == '__main__':
+    exit("#pythoniscool")
