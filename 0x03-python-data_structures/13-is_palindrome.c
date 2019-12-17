@@ -20,8 +20,6 @@ int is_palindrome(listint_t **head)
 		}
 		temp = *head;
 		ver = *head;
-		if (!temp->next)
-			return (0);
 		for (a = 0; a < (count / 2); a++)
 		{
 			for (b = 0; b < (count - a - 1); b++)
