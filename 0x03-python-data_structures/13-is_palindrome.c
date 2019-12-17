@@ -1,6 +1,6 @@
 #include "lists.h"
-/*
- * is_palindrome - check if list palandrome
+/**
+ * is_palindrome - function check if list palandrome
  * @head: head to list
  * Return: 1 if palindrome
  */
@@ -11,6 +11,7 @@ int is_palindrome(listint_t **head)
 		int count = 0, a, b;
 		listint_t *temp;
 		listint_t *ver;
+
 		temp = *head;
 		while (temp)
 		{
