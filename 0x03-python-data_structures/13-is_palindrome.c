@@ -8,9 +8,9 @@ int is_palindrome(listint_t **head)
 {
 	if (*head)
 	{
-		int count = 0, a, b;
-		listint_t *temp;
-		listint_t *ver;
+		int count = 0, a, b, v, e;
+		listint_t *temp = malloc(sizeof(listint_t));
+		listint_t *ver = malloc(sizeof(listint_t));
 
 		temp = *head;
 		while (temp)
@@ -18,15 +18,21 @@ int is_palindrome(listint_t **head)
 			temp = temp->next;
 			count++;
 		}
+		free(temp);
 		temp = *head;
 		ver = *head;
 		for (a = 0; a < (count / 2); a++)
 		{
-			for (b = 0; b < (count - a); b++)
-				ver = ver->next;
-			temp = temp->next;
+			for (b = 0; b < (count - a - 1); b++)
+			{
+				if (ver->next)
+					ver = ver->next;
+				v = ver->n;
+			}
+			e = temp->n;
 			if (ver->n != temp->n)
 				return (0);
+			temp = temp->next;
 			ver = *head;
 		}
 		return (1);
