@@ -18,7 +18,6 @@ int is_palindrome(listint_t **head)
 			temp = temp->next;
 			count++;
 		}
-		free(temp);
 		temp = *head;
 		ver = *head;
 		for (a = 0; a < (count / 2); a++)
@@ -30,7 +29,7 @@ int is_palindrome(listint_t **head)
 				v = ver->n;
 			}
 			e = temp->n;
-			if (ver->n != temp->n)
+			if (e != v)
 				return (0);
 			temp = temp->next;
 			ver = *head;
