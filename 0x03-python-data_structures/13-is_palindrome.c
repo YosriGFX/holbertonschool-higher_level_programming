@@ -10,18 +10,18 @@ int is_palindrome(listint_t **head)
 	{
 		int count = 0, a, b, v, e;
 		listint_t *temp = malloc(sizeof(listint_t));
-		listint_t *ver = malloc(sizeof(listint_t));
-
 		temp = *head;
 		while (temp)
 		{
 			temp = temp->next;
 			count++;
 		}
+		free(temp);
 		temp = *head;
-		ver = *head;
 		for (a = 0; a < (count / 2); a++)
-		{
+		{	
+			listint_t *ver = malloc(sizeof(listint_t));
+			ver = *head;
 			for (b = 0; b < (count - a - 1); b++)
 			{
 				if (ver->next)
@@ -30,9 +30,10 @@ int is_palindrome(listint_t **head)
 			}
 			e = temp->n;
 			if (e != v)
+			{
 				return (0);
+			}
 			temp = temp->next;
-			ver = *head;
 		}
 		return (1);
 	}
