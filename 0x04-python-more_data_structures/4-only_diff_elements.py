@@ -5,6 +5,6 @@ def only_diff_elements(set_1, set_2):
         if a not in set_2:
             set_3.add(a)
     for a in set_2:
-        if a not in set_3:
+        if a not in set_1:
             set_3.add(a)
     return set_3
