@@ -1,4 +1,7 @@
 #!/usr/bin/python
 def number_keys(a_dictionary):
-    a = len(a_dictionary)
-    return a
+    s = 0
+    for a in a_dictionary:
+        if a != None:
+            s += 1
+    return s
