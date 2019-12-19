@@ -7,7 +7,10 @@ def roman_to_int(roman_string):
         for i in range(n - 1, 0, - 1):
             current = dic[roman_string[i]]
             prev = dic[roman_string[i - 1]]
-            total += prev if prev >= current else -prev
+            if prev >= current:
+                total += prev
+            else:
+                total -= prev
         return total
     else:
         return None
