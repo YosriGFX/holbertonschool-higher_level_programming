@@ -14,12 +14,13 @@ class Square:
             i = 0
             while (i < self.__size):
                 j, e = 0, 0
-                while (e < self.position[0]):
-                    if self.position[1] > 0:
-                        print(end="_")
-                    else:
-                        print(end=" ")
-                    e += 1
+                if len(self.__position) == 2:
+                    while (e < self.__position[0]):
+                        if self.__position[1] > 0:
+                            print(end="_")
+                        else:
+                            print(end=" ")
+                        e += 1
                 while (j < self.__size):
                     print(end="#")
                     j += 1
@@ -43,6 +44,7 @@ class Square:
             if self.__size < 0:
                 raise ValueError("size must be >= 0")
             else:
+                print("here")
                 return self.__size
         else:
             raise TypeError("size must be an integer")
@@ -50,8 +52,8 @@ class Square:
     @position.setter
     def position(self, value):
         self.__position = value
-        if self.__position != ((int > 0), (int > 0)):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            __a, __b = self.__position[0], self.__position[1]
-            return (a, b)
+        if type(self.__position) == tuple:
+            if (self.__position[0] >= 0) and (self.__position[1] >= 0):
+                if not (self.__position[3]):
+                    return self._position
+        raise TypeError("position must be a tuple of 2 positive integers")
