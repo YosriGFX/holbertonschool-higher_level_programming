@@ -11,10 +11,14 @@ class Square:
 
     def my_print(self):
         if self.__size != 0:
-            i = 0
+            i, f = 0, 0
+            if len(self.__position) == 2:
+                while (f < self.__position[1]):
+                    print()
+                    f += 1
             while (i < self.__size):
                 j, e = 0, 0
-                if len(self.__position) == 2:
+                if type(self.__position) == tuple:
                     while (e < self.__position[0]):
                         print(end=" ")
                         e += 1
