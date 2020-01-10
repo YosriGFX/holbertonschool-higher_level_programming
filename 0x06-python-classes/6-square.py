@@ -12,10 +12,12 @@ class Square:
     def my_print(self):
         if self.__size != 0:
             i, f = 0, 0
-            if len(self.__position) == 2:
+            if type(self.__position) == tuple and len(self.__position) == 2:
                 while (f < self.__position[1]):
                     print()
                     f += 1
+            else:
+                raise TypeError("position must be a tuple of 2 positive integers")
             while (i < self.__size):
                 j, e = 0, 0
                 if type(self.__position) == tuple:
