@@ -16,10 +16,7 @@ class Square:
                 j, e = 0, 0
                 if len(self.__position) == 2:
                     while (e < self.__position[0]):
-                        if self.__position[1] > 0:
-                            print(end=" ")
-                        else:
-                            pass
+                        print(end=" ")
                         e += 1
                 while (j < self.__size):
                     print(end="#")
