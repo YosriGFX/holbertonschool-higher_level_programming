@@ -1,19 +1,25 @@
 #!/usr/bin/python3
 """
 Class Rectangle
+
 """
+
+
 class Rectangle:
-	"""
+
+    """
+
     Attributes:
+
         width (int):  width
         height (int):  height
     """
 
     def __init__(self, width=0, height=0):
         """
-		Args:
-            width (int): width
-            height (int): height
+        args:
+        width (int): width
+        height (int): height
         Returns: None
         """
         self.__width = width

@@ -12,7 +12,7 @@ class Rectangle:
         """width
 
         Returns:
-		 __width
+        __width
         """
         return self.__width
 
@@ -20,7 +20,7 @@ class Rectangle:
     def height(self):
         """rectangle height
         Returns:
-		__height
+        __height
         """
         return self.__height
 
