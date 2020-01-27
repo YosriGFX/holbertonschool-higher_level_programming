@@ -398,7 +398,6 @@ guillaume@ubuntu:~/$
 -   File:  `models/rectangle.py`
 
 
-
 #### 9. Update #1  mandatory
 
 Update the class  `Rectangle`  by updating the public method  `def update(self, *args):`  by changing the prototype to  `update(self, *args, **kwargs)`  that assigns a key/value argument to attributes:
@@ -448,9 +447,6 @@ guillaume@ubuntu:~/$
 -   GitHub repository:  `holbertonschool-higher_level_programming`
 -   Directory:  `0x0C-python-almost_a_circle`
 -   File:  `models/rectangle.py`
-
-Done?  
-Help
 
 #### 10. And now, the Square!  mandatory
 
