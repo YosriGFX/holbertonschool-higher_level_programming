@@ -14,9 +14,26 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        '''Rectangle __str__'''
+        return ("[Rectangle] (%s) %s/%s - %s/%s" % (
+            self.id,
+            self.__x,
+            self.__y,
+            self.__width,
+            self.__height
+            ))
+
     def area(self):
         '''area function'''
         return (self.__width * self.__height)
+
+    def display(self):
+        '''display function'''
+        for _ in range(self.__height):
+            for _ in range(self.__width):
+                print(end="#")
+            print()
 
     @property
     def width(self):
