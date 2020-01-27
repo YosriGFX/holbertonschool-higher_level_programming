@@ -4,4 +4,4 @@ git add .
 git commit -m "Almost a circle 🌍"
 git push
 clear
-echo "\n\r Done Mr.YOSRI \n\r"
+echo "\n\n   Done Mr.YOSRI \n\n"
