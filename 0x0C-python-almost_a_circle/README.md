@@ -4,7 +4,6 @@ Foundations - Higher-level programming ― Python
 
 _by Guillaume, CTO at Holberton school_
 
-Ongoing project - started 01-24-2020, must end by 01-29-2020 (in 1 day) - you're done with  0% of tasks.
 
 #### 0. If it's not tested it doesn't work  mandatory
 
