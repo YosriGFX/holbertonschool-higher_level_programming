@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-''' base '''
+'''base file'''
 
 
 class Base:
+    '''Base Class'''
     __nb_objects = 0
 
     def __init__(self, id=None):
-        ''' __init___'''
+        '''Base __init__'''
         if id:
             self.id = id
         else:
