@@ -4,37 +4,25 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
-        self.__position = position
+        self.position = position
 
     def area(self):
         return (self.__size * self.__size)
 
     def my_print(self):
         if self.__size != 0:
-            i, f = 0, 0
-            if type(self.__position) == tuple and len(self.__position) == 2:
-                while (f < self.__position[1]):
-                    print()
-                    f += 1
-            else:
-                raise TypeError("position must be a tuple of 2 positive integers")
+            for f in range(self.__position[1]):
+                print()
+            i = 0
             while (i < self.__size):
-                j, e = 0, 0
-                if type(self.__position) == tuple:
-                    while (e < self.__position[0]):
-                        print(end=" ")
-                        e += 1
-                while (j < self.__size):
+                for e in range(self.__position[0]):
+                    print(end=" ")
+                for j in range(self.__size):
                     print(end="#")
-                    j += 1
                 print()
                 i += 1
         else:
             print()
-
-    @property
-    def position(self):
-        return (self.__position)
 
     @property
     def size(self):
@@ -52,11 +40,15 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
+    @property
+    def position(self):
+        return (self.__position)
+
     @position.setter
     def position(self, value):
-        self.__position = value
-        if type(self.__position) == tuple:
-            if (self.__position[0] >= 0) and (self.__position[1] >= 0):
-                if not (self.__position[3]):
-                    return self._position
-        raise TypeError("position must be a tuple of 2 positive integers")
+        if type(value) is not tuple or len(value) != 2 \
+        or type(value[0]) is not int or value[0] < 0 \
+        or type(value[1]) is not int or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value

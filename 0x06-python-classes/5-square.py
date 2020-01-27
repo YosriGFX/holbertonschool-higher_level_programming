@@ -20,6 +20,7 @@ class Square:
                 i += 1
         else:
             print()
+        return 0
 
     @property
     def size(self):
