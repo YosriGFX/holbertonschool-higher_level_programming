@@ -1,5 +1,5 @@
 chmod -R 777 *
 rm -r models/__pycache__
 git add .
-git commit -m "Rectangle ❑"
+git commit -m "Almost a circle 🌍"
 git push
