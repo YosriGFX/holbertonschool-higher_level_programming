@@ -51,3 +51,21 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        '''load_from_file function'''
+        func = cls.__name__
+        dicto = []
+        filo = "%s.json" % func
+        try:
+            proc = open(filo)
+            js_dicto = cls.from_json_string(proc.read())
+            for ct_dicto in js_dicto:
+                dicto.append(cls.create(**ct_dicto))
+            return dicto
+        except:
+            return dicto
+        finally:
+            proc.close()
+
