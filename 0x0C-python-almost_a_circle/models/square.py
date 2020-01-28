@@ -48,7 +48,6 @@ class Square(Rectangle):
         }
         return (dicti)
 
-
     @property
     def size(self):
         '''size getter'''
