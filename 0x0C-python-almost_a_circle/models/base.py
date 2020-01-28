@@ -33,13 +33,14 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         '''save_to_file classic'''
-        filename = cls.__name__ + ".json"
-        json_list = []
-        if list_objs is not None:
-            for i in list_objs:
-                json_list.append(i.to_dictionary())
-        with open(filename, "w") as file:
-            file.write(cls.to_json_string(json_list))
+        fname = "%s.json" % cls.__name__
+        js_objs = []
+        if list_objs:
+            for _ in list_objs:
+                js_objs.append(_.to_dictionary())
+        process = open(fname, "w")
+        process.write(cls.to_json_string(js_objs))
+        process.close()
 
     @classmethod
     def create(cls, **dictionary):
@@ -54,12 +55,15 @@ class Base:
     @classmethod
     def load_from_file(cls):
         '''load_from_file function'''
+        
         try:
-            with open(cls.__name__ + ".json", "r") as file:
-                json_list = cls.from_json_string(file.read())
-                obj_list = []
-                for i in json_list:
-                    obj_list.append(cls.create(**i))
-                return obj_list
+            func = cls.__name__
+            dicto = []
+            filo = "%s.json" % func
+            proc = open(filo)
+            js_dicto = cls.from_json_string(proc.read())
+            for ct_dicto in js_dicto:
+                dicto.append(cls.create(**ct_dicto))
+            return dicto
         except:
             return []
