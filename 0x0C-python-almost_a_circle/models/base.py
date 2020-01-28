@@ -22,6 +22,13 @@ class Base:
             list_dictionaries = []
         return (json.dumps(list_dictionaries))
 
+    @staticmethod
+    def from_json_string(json_string):
+        '''from_json_string Static'''
+        if not json_string:
+            json_string = '[]'
+        return (json.loads(json_string))
+
     @classmethod
     def save_to_file(cls, list_objs):
         '''save_to_file classic'''
