@@ -32,5 +32,5 @@ class Base:
                 list_objs[en] = cls.to_dictionary(content)
             process.write(cls.to_json_string(list_objs))
         else:
-            process.write()
+            process.write(cls.to_json_string(None))
         process.close()
