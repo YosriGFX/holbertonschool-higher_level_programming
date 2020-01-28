@@ -55,7 +55,6 @@ class Base:
     @classmethod
     def load_from_file(cls):
         '''load_from_file function'''
-        
         try:
             func = cls.__name__
             dicto = []
