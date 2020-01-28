@@ -25,7 +25,6 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         '''save_to_file classic'''
-        doc = []
         name = "%s.json" % cls.__name__
         process = open(name, "w")
         if list_objs:
@@ -33,5 +32,5 @@ class Base:
                 list_objs[en] = cls.to_dictionary(content)
             process.write(cls.to_json_string(list_objs))
         else:
-            process.write(doc)
+            process.write()
         process.close()
