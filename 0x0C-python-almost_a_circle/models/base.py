@@ -68,4 +68,3 @@ class Base:
             return dicto
         finally:
             proc.close()
-
