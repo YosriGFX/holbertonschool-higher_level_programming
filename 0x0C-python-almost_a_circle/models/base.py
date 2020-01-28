@@ -54,16 +54,12 @@ class Base:
     @classmethod
     def load_from_file(cls):
         '''load_from_file function'''
-        func = cls.__name__
-        dicto = []
-        filo = "%s.json" % func
         try:
-            proc = open(filo)
-            js_dicto = cls.from_json_string(proc.read())
-            for ct_dicto in js_dicto:
-                dicto.append(cls.create(**ct_dicto))
-            return dicto
+            with open(cls.__name__ + ".json", "r") as file:
+                json_list = cls.from_json_string(file.read())
+                obj_list = []
+                for i in json_list:
+                    obj_list.append(cls.create(**i))
+                return obj_list
         except:
-            return dicto
-        finally:
-            proc.close()
+            return []
