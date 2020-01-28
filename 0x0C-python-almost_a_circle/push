@@ -1,8 +1,8 @@
 chmod -R 777 *
 rm -r models/__pycache__
-rm -r test/__pycache__
-rm -r test/test_models/__pycache__
-git add .
+rm -r tests/__pycache__
+rm -r tests/test_models/__pycache__
+git add --all
 git commit -m "Almost a circle 🌍"
 git push
 clear
