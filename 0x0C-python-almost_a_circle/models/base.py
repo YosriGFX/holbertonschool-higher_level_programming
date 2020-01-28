@@ -33,14 +33,13 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         '''save_to_file classic'''
-        fname = "%s.json" % cls.__name__
-        js_objs = []
-        if list_objs:
-            for _ in list_objs:
-                js_objs.append(_.to_dictionary())
-        process = open(fname, "w")
-        process.write(cls.to_json_string(js_objs))
-        process.close()
+        filename = cls.__name__ + ".json"
+        json_list = []
+        if list_objs is not None:
+            for i in list_objs:
+                json_list.append(i.to_dictionary())
+        with open(filename, "w") as file:
+            file.write(cls.to_json_string(json_list))
 
     @classmethod
     def create(cls, **dictionary):
