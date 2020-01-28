@@ -29,9 +29,9 @@ class Base:
         name = "%s.json" % cls.__name__
         process = open(name, "w")
         if list_objs:
-            for content in list_objs:
-                doc.append(cls.to_dictionary(content))
-            process.write(cls.to_json_string(doc))
+            for en, content in enumerate(list_objs):
+                list_objs[en] = cls.to_dictionary(content)
+            process.write(cls.to_json_string(list_objs))
         else:
             process.write(doc)
         process.close()
