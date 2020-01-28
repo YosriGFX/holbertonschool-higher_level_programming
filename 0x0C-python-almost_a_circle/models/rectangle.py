@@ -62,6 +62,17 @@ class Rectangle(Base):
         elif len(args) > 4:
             self.y = args[4]
 
+    def to_dictionary(self):
+        '''to_dictionary function'''
+        dicti = {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
+        }
+        return (dicti)
+
     @property
     def width(self):
         '''width property'''
