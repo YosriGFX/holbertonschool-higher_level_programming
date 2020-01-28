@@ -18,36 +18,36 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         '''to_json_string Static'''
-        if not list_dictionaries:
-            list_dictionaries = []
-        return (json.dumps(list_dictionaries))
+        if list_dictionaries:
+            return (json.dumps(list_dictionaries))
+        else:
+            return (json.dumps([]))
 
     @staticmethod
     def from_json_string(json_string):
         '''from_json_string Static'''
         if not json_string:
-            json_string = '[]'
+            return []
         return (json.loads(json_string))
 
     @classmethod
     def save_to_file(cls, list_objs):
         '''save_to_file classic'''
-        name = "%s.json" % cls.__name__
-        process = open(name, "w")
+        fname = "%s.json" % cls.__name__
+        js_objs = []
         if list_objs:
-            for en, content in enumerate(list_objs):
-                list_objs[en] = cls.to_dictionary(content)
-            process.write(cls.to_json_string(list_objs))
-        else:
-            process.write(cls.to_json_string(None))
+            for _ in list_objs:
+                js_objs.append(_.to_dictionary())
+        process = open(fname, "w")
+        process.write(cls.to_json_string(js_objs))
         process.close()
 
     @classmethod
     def create(cls, **dictionary):
         '''create  classic'''
-        if cls.__name__ == "Rectangle":
+        if cls.__name__ is "Rectangle":
             dummy = cls(1, 1)
-        elif cls.__name__ == "Square":
+        elif cls.__name__ is "Square":
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
