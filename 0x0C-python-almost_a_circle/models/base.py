@@ -41,3 +41,13 @@ class Base:
         else:
             process.write(cls.to_json_string(None))
         process.close()
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''create  classic'''
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
