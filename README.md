@@ -1,5 +1,8 @@
-# [Higher-level programming - Python] #
 
+# Higher-level programming - Python 
+
+                                    `Holberton School`
+##
 -   `231`  [0x00. Python - Hello, World]
 -   `233`  [0x01. Python - if/else, loops, functions] 
 -   `239`  [0x02. Python - import & modules] 
