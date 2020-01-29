@@ -16,3 +16,8 @@
 -   `254`  [0x0A. Python - Inheritance] 
 -   `260`  [0x0B. Python - Input/Output]
 -   `331`  [0x0C. Python - Almost a circle]
+-   `Loading..`  [0x.. To be continued]
+
+##
+> **- YosriG1997@gmail.com**
+##
