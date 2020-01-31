@@ -66,3 +66,86 @@ class Base:
             return dicto
         except:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes a list of Rectangles/Squares in csv
+        Args:
+            list
+        Returns:
+            (list) of Rectangles/Squares in csv
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as csvfile:
+            csv_writer = csv.writer(csvfile)
+            if cls.__name__ is "Rectangle":
+                for r in list_objs:
+                    csv_writer.writerow([r.id, r.width, r.height,
+                                         r.x, r.y])
+            elif cls.__name__ is "Square":
+                for s in list_objs:
+                    csv_writer.writerow([s.id, s.size, s.x, s.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes a list of Rectangles/Squares in csv
+        Args:
+            None
+        Returns:
+            None
+        """
+        filename = cls.__name__ + ".csv"
+        obj_list = []
+        try:
+            with open(filename, 'r') as csv_file:
+                csv_reader = csv.reader(csv_file)
+                for args in csv_reader:
+                    if cls.__name__ is "Rectangle":
+                        obj = cls.create(**{"id": int(args[0]),
+                                            "width": int(args[1]),
+                                            "height": int(args[2]),
+                                            "x": int(args[3]),
+                                            "y": int(args[4])})
+                    elif cls.__name__ is "Square":
+                        obj = cls.create(**{"id": int(args[0]),
+                                            "size": int(args[1]),
+                                            "x": int(args[2]),
+                                            "y": int(args[3])})
+
+                    obj_list.append(obj)
+        except Exception:
+            return obj_list
+        return obj_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares
+        Args:
+            list_rectangles (list of Rectangles)
+            list_squares (list of squares)
+        Returns:
+            None
+        """
+        for i in list_rectangles:
+            t = turtle.Turtle()
+            t.speed(0.7)
+            t.penup()
+            t.setpos(i.x, i.y)
+            t.pendown()
+            t.forward(i.width)
+            t.left(90)
+            t.forward(i.height)
+            t.left(90)
+            t.forward(i.width)
+            t.left(90)
+            t.forward(i.height)
+        for i in list_squares:
+            t = turtle.Turtle()
+            t.speed(0.7)
+            t.penup()
+            t.setpos(i.x, i.y)
+            t.pendown()
+            t.begin_fill()
+            for _ in range(4):
+                t.forward(i.size)
+                t.left(90)
