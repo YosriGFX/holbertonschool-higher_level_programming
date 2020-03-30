@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 '''0-select_states.py'''
-import MySQLdb
+import MySQLdb  
 from sys import argv
 
 
