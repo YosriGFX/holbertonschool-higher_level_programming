@@ -15,13 +15,17 @@ if __name__ == '__main__':
         charset='utf8'
     )
     cursor = database.cursor()
-    rows = 'cities.id, cities.name, states.name'
-    query = 'SELECT {} FROM cities JOIN states on states.id = state_id'.format(
-        rows
+    state_name = argv[4].replace('"', '')
+    rows = 'cities.name'
+    joinment = 'JOIN states on states.id = state_id'
+    condition = 'WHERE states.name = "{}"'.format(state_name)
+    query = 'SELECT {} FROM cities {} {}'.format(
+        rows,
+        joinment,
+        condition,
     )
     cursor.execute(query)
     states = cursor.fetchall()
-    for city in states:
-        print(city)
+    print(', '.join(city[0] for city in states))
     cursor.close()
     database.close()
