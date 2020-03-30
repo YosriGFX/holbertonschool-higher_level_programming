@@ -11,7 +11,7 @@ from sqlalchemy import Column, Integer, String
 if __name__ == '__main__':
     '''init by filename'''
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        'mysql+mysqldb://{}:{}@localhost/{}'.format(
             argv[1],
             argv[2],
             argv[3]
