@@ -9,11 +9,6 @@ def find_peak(list_of_integers):
     length = len(list_of_integers)
     if length == 1:
         return list_of_integers[0]
-    elif length == 2:
-        if list_of_integers[0] > list_of_integers[1]:
-            return list_of_integers[0]
-        else:
-            list_of_integers[1]
     peak = list_of_integers[1]
     a = 1
     while a < length:
