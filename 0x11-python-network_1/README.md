@@ -10,4 +10,5 @@
 #### 8. Search API
 #### 9. My Github!
 #### 10. Time for an interview!
+#### 11. Twitter Auth
 > Copyright © 2020 Holberton School. All rights reserved.
