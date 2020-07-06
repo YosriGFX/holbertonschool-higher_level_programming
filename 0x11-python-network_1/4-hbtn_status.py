@@ -7,7 +7,7 @@ import requests
 if __name__ == '__main__':
     Link = "https://intranet.hbtn.io/status"
     ReqData = requests.get(Link)
-    plainText = ReqData.plainText
+    plainText = ReqData.text
     print("Body response:")
     print("\t- type: {}".format(type(plainText)))
     print("\t- content: {}".format(plainText))
