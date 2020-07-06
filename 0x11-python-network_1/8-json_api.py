@@ -10,13 +10,18 @@ from sys import argv
 if __name__ == '__main__':
     Query = argv[1] if len(argv) == 2 else ""
     Link = 'http://0.0.0.0:5000/search_user'
-    ReqData = requests.post(Link, data={'Query': Query})
+    ReqData = requests.post(Link, data={'q': Query})
     try:
         ResponseDict = ReqData.json()
         id, name = ResponseDict.get('id'), ResponseDict.get('name')
         if len(ResponseDict) == 0 or not id or not name:
             print("No result")
         else:
-            print("[{}] {}".format(ResponseDict.get('id'), ResponseDict.get('name')))
+            print(
+                "[{}] {}".format(
+                    ResponseDict.get('id'),
+                    ResponseDict.get('name')
+                )
+            )
     except:
         print("Not a valid JSON")
