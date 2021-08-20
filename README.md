@@ -1,3 +1,4 @@
+
 ## Higher-level programming - Python
 
 > ### Higher-level programming - Python
@@ -30,4 +31,4 @@
 
 ![Yosri Ghorbel](https://pbs.twimg.com/media/E3YEO7kXwAU9x6x?format=png&name=4096x4096)
 
-> Copyright © 2021 Holberton School. All rights reserved.
+> Copyright © 2021 [Holberton School](https://www.holbertonschool.com). All rights reserved.
